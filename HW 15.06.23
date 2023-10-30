@@ -1,0 +1,22 @@
+ 1 уровень сложности: В рамках БД "онлайн-магазин" напишите след/запросы:
+
+
+Вывести название и стоимость в USD одного самого дорогого проданного товара
+
+Вывести два самых дорогих товара из категории Beverages из USA
+
+Вывести заказы, добавив поле доставлено (или нет), учитывая, что доставлены только 10248 и 10249
+
+Вывести список стран, которые поставляют морепродукты
+
+Очистить поле ContactName у всех клиентов не из China
+
+
+SELECT ProductName, Price FROM Products
+ORDER BY  Price DESC
+LIMIT 2;
+
+SELECT Products.CategoryID, Products.ProductName, Categories.CategoryID, Categories.CategoryName
+FROM Products
+INNER JOIN Categories ON Products.CategoryID=Categories.CategoryID
+WHERE CategoryName = "Beverages";
